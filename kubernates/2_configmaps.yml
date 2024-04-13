@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gobank-configmap
+data:
+  SPRING_PROFILES_ACTIVE: prod
+  SPRING_CONFIG_IMPORT: "optional:configserver:http://localhost:8071/"
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8071 /eureka/"
+  CONFIGSERVER_APPLICATION_NAME: configserver  
+  EUREKA_APPLICATION_NAME: eurekaserver  
+  ACCOUNTS_APPLICATION_NAME: account
+  LOANS_APPLICATION_NAME: loan
+  CARDS_APPLICATION_NAME: card
+  GATEWAY_APPLICATION_NAME: gatewayserver
+  KEYCLOAK_ADMIN: admin
+  KEYCLOAK_ADMIN_PASSWORD: admin
+  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:8081/realms/master/protocol/openid-connect/certs"
